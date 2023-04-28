@@ -1,0 +1,88 @@
+﻿<Window x:Class="WpfBox2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfBox2"
+        ResizeMode="NoResize"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="280" Width="440">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="135"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <!-- 
+        Nested Grid: Aktionspanel1
+        -->
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="18"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="45" />
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Objekt auswählen..." Margin="5,0,0,0" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" />
+            <TextBox x:Name="inputTB" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Margin="5,0,0,0" />
+            <Button Content="nehmen" Height="23" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="2" VerticalAlignment="Top" Width="40" Click="TakeBtn_Click" Margin="5,5,0,0" FontFamily="Microsoft Sans Serif" FontSize="8" />
+            <Button Content="ablegen" Height="23" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="2" VerticalAlignment="Top" Width="40" Click="DropBtn_Click" Margin="3,5,0,0" FontFamily="Microsoft Sans Serif" FontSize="8" />
+            <Button Content="anschauen" Height="23" HorizontalAlignment="Left" Grid.Column="2" Grid.Row="2" VerticalAlignment="Top" Width="45" Click="LookAtBtn_Click" Margin="3,5,0,0" FontFamily="Microsoft Sans Serif" FontSize="8" />
+        </Grid>
+        <!-- Nested Grid: Aktionspanel1 Ende -->
+
+        <!-- 
+        Nested Grid: Aktionspanel2
+        -->
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="45"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Content="Umsehen" Height="23" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" VerticalAlignment="Top" Width="75" Click="LookBtn_Click" Margin="5,5,0,0" Grid.RowSpan="3" FontFamily="Microsoft Sans Serif" FontSize="8" />
+            <Button Content="Inventar" Height="23" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" VerticalAlignment="Top" Width="75" Click="InventoryBtn_Click" Margin="5,5,0,0" Grid.RowSpan="3" FontFamily="Microsoft Sans Serif" FontSize="8" />
+        </Grid>
+        <!-- Nested Grid: Aktionspanel2 Ende -->
+
+        <!-- 
+        Nested Grid: Navigationskreuz
+        -->    
+        <Grid Grid.Column="2" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="45"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Content="Norden" Height="20" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0" VerticalAlignment="Top" Width="35" Click="NBtn_Click" Margin="5,5,0,0" Grid.RowSpan="3" FontFamily="Microsoft Sans Serif" FontSize="8" />
+            <Button Content="Sueden" Height="20" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="2" VerticalAlignment="Top" Width="35" Click="SBtn_Click" Margin="5,5,0,0" Grid.RowSpan="3" FontFamily="Microsoft Sans Serif" FontSize="8" />
+            <Button Content="Osten" Height="20" HorizontalAlignment="Left" Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" Width="35" Click="OBtn_Click" Margin="5,5,0,0" Grid.RowSpan="3" FontFamily="Microsoft Sans Serif" FontSize="8" />
+            <Button Content="Westen" Height="20" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" Width="35" Click="WBtn_Click" Margin="5,5,0,0" Grid.RowSpan="3" FontFamily="Microsoft Sans Serif" FontSize="8" />
+
+        </Grid>
+        <!-- Nested Grid: Navigationskreuz Ende -->
+
+        <TextBox x:Name="outputTB" Height="140" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5,0,0" Width="420" Grid.Column="0" Grid.Row="0" TextWrapping="Wrap" Grid.ColumnSpan="3" FontFamily="Microsoft Sans Serif" FontSize="8" />
+            
+    </Grid>
+</Window>
