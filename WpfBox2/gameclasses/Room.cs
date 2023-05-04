@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfBox2.gameclasses
 {
+    [Serializable]
     public class Room : ThingHolder
     {
         public Room(string aName, string aDescription, Rm aN, Rm aS, Rm aW, Rm aO, ThingList tl) : base(aName, aDescription, tl)

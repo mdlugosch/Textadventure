@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfBox2.gameclasses
 {
+    [Serializable]
     public class ThingList : List<Thing>
     {
         public string Describe()

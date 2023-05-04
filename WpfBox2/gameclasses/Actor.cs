@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace WpfBox2.gameclasses
 {
+    [Serializable]
     public class Actor : ThingHolder
     {
         private Room _location; // Raum in der sich der Actor begindet

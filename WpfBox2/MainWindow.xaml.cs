@@ -1,6 +1,10 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Data.SqlTypes;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows;
+using System.Windows.Media;
 
 namespace WpfBox2
 {
@@ -16,6 +20,7 @@ namespace WpfBox2
             InitGame();
             StartGame();
         }
+
         /*
         * Trollraum -- Wald
         *    |
@@ -32,7 +37,7 @@ namespace WpfBox2
             outputTB.AppendText($"Du befindest dich an folgenden Ort: {adv.Player.Location.Name}.\r\n");
             outputTB.AppendText($"Du siehst: {adv.Player.Location.Description}.\r\n");
             outputTB.AppendText("Wohin willst du jetzt gehen?\r\n");
-            outputTB.AppendText("Klicke auf einen der Richtungsbuttons: Norden, Osten, Süden oder Westen");
+            outputTB.AppendText("Klicke auf einen der Richtungsbuttons: Norden, Osten, Süden oder Westen\r\n");
         }
 
         // Hilfmethode um der Ausgabebox Text hinzuzufügen
@@ -105,7 +110,51 @@ namespace WpfBox2
 
         private void LookAtBtn_Click(object sender, RoutedEventArgs e)
         {
+            WrLn(adv.LookAtOb(inputTB.Text));
+        }
+        
+        private void loadToolStripMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
+            Stream st;
+            BinaryFormatter binfmt;
+            if (openFileDialog1.ShowDialog() == true)
+            {
+                if ((st = openFileDialog1.OpenFile()) != null)
+                {
+                    binfmt = new BinaryFormatter();
+                    adv = (Adventure)binfmt.Deserialize(st);
+                    st.Close();
+                }
+            }
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            Stream st;
+            BinaryFormatter binfmt;
+            if(saveFileDialog1.ShowDialog() == true)
+            {
+                if((st = saveFileDialog1.OpenFile()) != null) {
+                    binfmt = new BinaryFormatter();
+                    binfmt.Serialize(st, adv);
+                    st.Close();
+                    WrLn("gespeichert");
+                }
+            }
+        }
+
+        private void restartToolStripMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

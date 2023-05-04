@@ -8,26 +8,22 @@ using WpfBox2.gameclasses;
 
 namespace WpfBox2
 {
+    [Serializable]
     public class Adventure
     {
         private RoomList _map;
         private Actor _player;
 
-        ThingList trollroomlist = new ThingList();
-        ThingList forestlist = new ThingList();
-
         public Adventure()
         {
-            trollroomlist.Add(new Thing("Karotte", "Eine sehr knackige Karotte"));
-
-            forestlist.Add(new Thing("Wurst", "Eine rundliche Wurst aus Schweinefleisch"));
-            forestlist.Add(new Thing("Baum", "Ein gigantischer Eichenbaum", false));
-
             //Karte der Welt in einem Dictionary anlegen
             _map = new RoomList();
 
-            _map.Add(Rm.TrollRaum, new Room("Troll Raum", "Ein sehr dunklen Raum in dem es nach Troll riecht", Rm.NOEXIT, Rm.Höhle, Rm.NOEXIT, Rm.Wald, trollroomlist));
-            _map.Add(Rm.Wald, new Room("Wald", "Einen sehr lichten Wald der im Sonnenlicht schimmert", Rm.NOEXIT, Rm.NOEXIT, Rm.TrollRaum, Rm.NOEXIT, forestlist));
+            _map.Add(Rm.TrollRaum, new Room("Troll Raum", "Ein sehr dunklen Raum in dem es nach Troll riecht", Rm.NOEXIT, Rm.Höhle, Rm.NOEXIT, Rm.Wald, new ThingList { new Thing("Karotte", "Eine sehr knackige Karotte") }));
+            _map.Add(Rm.Wald, new Room("Wald", "Einen sehr lichten Wald der im Sonnenlicht schimmert", Rm.NOEXIT, Rm.NOEXIT, Rm.TrollRaum, Rm.NOEXIT, new ThingList { 
+                new Thing("Wurst", "Eine grobe Wurst aus Schweinefleisch"), 
+                new Thing("Baum", "Ein gigantischer Eichenbaum", false) 
+            }));
             _map.Add(Rm.Höhle, new Room("Höhle", "Eine weite Höhle deren Wände mit leuchtenen Moos bedeckt sind", Rm.TrollRaum, Rm.NOEXIT, Rm.NOEXIT, Rm.Verlies, new ThingList()));
             _map.Add(Rm.Verlies, new Room("Verlies", "Ein düsteres Verlies. Ratten huschen über den Boden", Rm.NOEXIT, Rm.NOEXIT, Rm.Höhle, Rm.NOEXIT, new ThingList()));
 
