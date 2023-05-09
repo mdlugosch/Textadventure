@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfBox2.gameclasses
+namespace WpfBox1.gameclasses
 {
     public class Actor : ThingHolder
     {

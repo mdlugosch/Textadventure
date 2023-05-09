@@ -4,9 +4,9 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WpfBox2.gameclasses;
+using WpfBox1.gameclasses;
 
-namespace WpfBox2
+namespace WpfBox1
 {
     public class Adventure
     {

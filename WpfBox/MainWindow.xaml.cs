@@ -2,7 +2,7 @@
 using System.Data.SqlTypes;
 using System.Windows;
 
-namespace WpfBox2
+namespace WpfBox1
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

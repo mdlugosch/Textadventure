@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace WpfBox2
+namespace WpfBox3
 {
     /// <summary>
     /// Interaction logic for App.xaml

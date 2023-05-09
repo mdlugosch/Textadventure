@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfBox2
+namespace WpfBox1
 {
     /// <summary>
     /// Die AdventureConstants beinhaltet Klassen die

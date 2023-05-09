@@ -149,7 +149,7 @@ namespace WpfBox2
 
         private void restartToolStripMenuItem_Click(object sender, RoutedEventArgs e)
         {
-
+            InitGame();
         }
 
         private void exitToolStripMenuItem_Click(object sender, RoutedEventArgs e)
