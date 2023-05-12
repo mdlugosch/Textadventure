@@ -46,7 +46,7 @@
                 <ColumnDefinition Width="25"/>
             </Grid.ColumnDefinitions>
             <Label Content="Eingabe:" FontSize="10" Margin="3,3,0,0" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" />
-            <TextBox x:Name="cmdTB" FontSize="10" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Margin="5,5,0,0" />
+            <TextBox x:Name="cmdTB" FontSize="10" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" Margin="5,5,0,0" KeyDown="cmdTB_KeyDown" />
             <!-- Für die Flagge wurde UTF-32: 0x0001F6A9 verwendet -->
             <Button Content="&#x0001F6A9;" Height="20" HorizontalAlignment="Right" Grid.Column="4" Grid.Row="0" VerticalAlignment="Top" Width="20" Click="cmdBtn_Click" Margin="5,5,0,0" FontFamily="Microsoft Sans Serif" FontSize="8" />
             

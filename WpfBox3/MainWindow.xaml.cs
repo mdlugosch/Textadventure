@@ -5,6 +5,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows;
 using System.Windows.Media;
+using System.Windows.Input;
 
 namespace WpfBox3
 {
@@ -169,7 +170,18 @@ namespace WpfBox3
 
         private void cmdBtn_Click(object sender, RoutedEventArgs e)
         {
+           cmdTB_KeyDown(sender, new KeyEventArgs(Keyboard.PrimaryDevice,
+           Keyboard.PrimaryDevice.ActiveSource,
+           0, Key.Enter));
+        }
 
+        private void cmdTB_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter) 
+            {
+                WrLn(adv.RunCommand(cmdTB.Text));
+                cmdTB.Clear();
+            }
         }
     }
 }

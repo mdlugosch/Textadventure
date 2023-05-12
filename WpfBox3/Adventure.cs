@@ -9,7 +9,7 @@ using WpfBox3.gameclasses;
 namespace WpfBox3
 {
     [Serializable]
-    public class Adventure
+    public partial class Adventure
     {
         private RoomList _map;
         private Actor _player;
