@@ -29,7 +29,7 @@ namespace WpfBox3
         */
         private void InitGame()
         {
-            adv= new Adventure();
+            adv = new Adventure();
         }
 
         private void StartGame()
@@ -57,6 +57,7 @@ namespace WpfBox3
             Wr(s + "\r\n");
         }
 
+        // --- Nicht genutzt ---
         private void ShowLocation()
         {
             Wr("[" + adv.Player.Name + "]");
@@ -66,7 +67,8 @@ namespace WpfBox3
 
         private void LookBtn_Click(object sender, RoutedEventArgs e)
         {
-            ShowLocation();
+            WrLn(adv.Look());
+            //ShowLocation();
         }
 
         private void InventoryBtn_Click(object sender, RoutedEventArgs e)
@@ -131,6 +133,16 @@ namespace WpfBox3
             }
         }
 
+        private void helpToolStripMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            string messageBoxText = "Mit der Welt interagieren:\r\n [Verb] [Objekt] z.B. \"Nehme Objekt\" oder \r\n [Verb] [Artikel] [Objekt] z.B. \"Nehme das Objekt\"";
+            string caption = "Anleitung";
+            MessageBoxButton button = MessageBoxButton.OK;
+            MessageBoxImage icon = MessageBoxImage.None;
+
+            MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.OK);
+        }
+
         private void saveToolStripMenuItem_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
@@ -160,12 +172,12 @@ namespace WpfBox3
 
         private void UpBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            MovePlayer(Dir.HOCH);
         }
 
         private void DownBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            MovePlayer(Dir.RUNTER);
         }
 
         private void cmdBtn_Click(object sender, RoutedEventArgs e)

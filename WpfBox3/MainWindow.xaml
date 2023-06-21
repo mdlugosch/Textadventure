@@ -106,6 +106,7 @@
                 <MenuItem Header="Neustart" x:Name="restartToolStripMenuItem" Click="restartToolStripMenuItem_Click" />
                 <MenuItem Header="Beenden" x:Name="exitToolStripMenuItem" Click="exitToolStripMenuItem_Click" />
             </MenuItem>
+            <MenuItem Header="Hilfe" x:Name="helpToolStripMenuItem" Click="helpToolStripMenuItem_Click" />
         </Menu>
 
         <TextBox x:Name="outputTB" Height="135" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5,0,0" Width="515" Grid.Column="0" Grid.Row="1" TextWrapping="Wrap" Grid.ColumnSpan="4" FontFamily="Microsoft Sans Serif" FontSize="8" />

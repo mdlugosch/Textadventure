@@ -16,6 +16,8 @@ namespace WpfBox3
 
         public Adventure()
         {
+            // Vokabular initialisieren
+            InitVocab();
             //Karte der Welt in einem Dictionary anlegen
             _map = new RoomList();
 
@@ -64,6 +66,12 @@ namespace WpfBox3
                 case Dir.WESTEN:
                     exit = r.w;
                     break;
+                case Dir.HOCH:
+                    exit = r.hoch;
+                    break;
+                case Dir.RUNTER:
+                    exit = r.runter;
+                    break;
                 default:
                     exit = Rm.NOEXIT;
                     break;
@@ -103,6 +111,11 @@ namespace WpfBox3
             }
 
             return s;
+        }
+
+        public string Look()
+        {
+            return $"[{ Player.Name}] Befindet sich momentan am folgenden Ort:  { Player.Location.Describe() }";
         }
 
         private void TransferOb(Thing t, ThingList fromlist, ThingList tolist)
@@ -179,5 +192,30 @@ namespace WpfBox3
             }
             return s;
         }
+
+        // Nicht implementiert
+        public string OpenOb(string obname)
+        {
+            return "nicht implementiert";
+        }
+        // Nicht implementiert
+        public string CloseOb(string obname)
+        {
+            return "nicht implementiert";
+        }
+        // Nicht implementiert
+        public string PullOb(string obname)
+        {
+            return "nicht implementiert";
+        }
+        // Nicht implementiert
+        public string PushOb(string obname)
+        {
+            return "nicht implementiert";
+        }
+
+        #region Dummy Methoden
+        public string PutObInContainer(string a, string b) { return "OK"; }
+        #endregion
     }
 }

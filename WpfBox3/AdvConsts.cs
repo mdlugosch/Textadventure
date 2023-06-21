@@ -21,7 +21,9 @@ namespace WpfBox3
         NORDEN,
         SUEDEN,
         OSTEN,
-        WESTEN
+        WESTEN,
+        HOCH,
+        RUNTER
     }
 
     /*
